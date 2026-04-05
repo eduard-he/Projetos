@@ -38,7 +38,7 @@ public class Produto {
         this.plu = plu;
     }
 
-    public int getQuantity(int quantity) {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -46,7 +46,7 @@ public class Produto {
         this.quantity = quantity;
     }
 
-    public double getValue(double value) {
+    public double getValue() {
         return value;
     }
 
