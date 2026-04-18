@@ -6,12 +6,19 @@ public class Produto {
     private int quantity;
     private double value;
 
-    //Cria uma instancia que facilita o nomeiamento das variaveis
-    public void init(String name, int plu, int quantity, double value) {
+
+    //Aqui eu crio um contrutor para facilitar a passagem de dados e para não quebrar o cod da galera
+    public Produto(String name, int plu, double value) {
         this.name = name;
         this.plu = plu;
-        this.quantity = quantity;
         this.value = value;
+
+    }
+
+    public Produto(String name, int plu, double value, int quantity) {
+        this(name, plu, value);
+        this.quantity = quantity;
+
     }
 
     public void imprime() {
@@ -38,7 +45,7 @@ public class Produto {
         this.plu = plu;
     }
 
-    public int getQuantity(int quantity) {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -46,11 +53,12 @@ public class Produto {
         this.quantity = quantity;
     }
 
-    public double getValue(double value) {
+    public double getValue() {
         return value;
     }
 
     public void setValue() {
         this.value = value;
     }
+
 }

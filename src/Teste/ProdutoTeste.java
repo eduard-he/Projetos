@@ -5,27 +5,18 @@ import Dominio.Produto;
 
 public class ProdutoTeste {
     public static void main(String[] args) {
-
-        //Criar o objeto e já faz uma lista para deixalo organizado
-        Produto[] estoque = new Produto[3];
         CalculadorEstoque calc = new CalculadorEstoque();
-        Produto produto = new Produto();
 
-        //Nomeia o produto e deixa em uma lista
-        estoque[0] = new Produto();
-        estoque[0].init("Arroz", 11111, 15000, 5.80);
-
-        estoque[1] = new Produto();
-        estoque[1].init("feijão", 5555, 2000, 10);
+        Produto p1 = new Produto("Arroz", 11111, 5.50, 15000);
+        Produto p2 = new Produto("Feijão", 5555, 8.00, 10000);
 
 
-        // 1. Percorre o array 'estoque' para imprimir cada item cadastrado
-        for (Produto p : estoque) {
-            if (p != null) {
-                p.imprime();
-            }
-
+        //percorre cada produto para emprimilo
+        for (Produto p : new Produto[]{p1, p2}) {
+            p.imprime();
         }
-        calc.calculadora(estoque);
+
+        // como eu coloquei o VarArgs (...) em calculadora eu uso assim que facilita
+        calc.calculadora(p1, p2);
     }
 }
