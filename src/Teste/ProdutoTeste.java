@@ -16,7 +16,7 @@ public class ProdutoTeste {
             p.imprime();
         }
 
-        // como eu coloquei o VarArgs (...) em calculadora eu uso assim que facilita
+       
         calc.calculadora(p1, p2);
     }
 }
