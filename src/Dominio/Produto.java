@@ -1,40 +1,35 @@
 package Dominio;
 
 public class Produto {
-    private String name;
+    private String nome;
     private int plu;
-    private int quantity;
-    private double value;
+    private int quantidade;
+    private double valor;
+    private int diasParaVencer;
 
 
     //Aqui eu crio um contrutor para facilitar a passagem de dados e para não quebrar o cod da galera
-    public Produto(String name, int plu, double value) {
-        this.name = name;
+    public Produto(String name, int plu, double value, int quantity,int diasParaVencer) {
+        this.nome = name;
         this.plu = plu;
-        this.value = value;
-
+        this.valor = valor;
+        this.quantidade = quantidade;
+        this.diasParaVencer = diasParaVencer;
     }
-
-    public Produto(String name, int plu, double value, int quantity) {
-        this(name, plu, value);
-        this.quantity = quantity;
-
-    }
-
-    public void imprime() {
-        // Só um bloco de impressão! para fazer a leitura para imprimir
-        System.out.println("Nome: " + this.name);
-        System.out.println("Codigo: " + this.plu);
-        System.out.println("Valor: " + this.value);
-        System.out.println("-----------------------------------------------------------------");
+    @Override
+    public String toString() {
+        return "Produto: " + nome +
+                " | Código: " + plu +
+                " | Valor: R$ " + valor +
+                " | Quantidade: " + quantidade ;
     }
 
     public String getName() {
-        return name;
+        return nome;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nome = name;
     }
 
     public int getPlu() {
@@ -45,20 +40,24 @@ public class Produto {
         this.plu = plu;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
+    public int getQuantity() {return quantidade; }
 
     public void setQuantity() {
-        this.quantity = quantity;
+        this.quantidade = quantidade;
     }
 
     public double getValue() {
-        return value;
+        return valor;
     }
 
-    public void setValue() {
-        this.value = value;
+    public void setValue(double value) {
+        this.valor = value;
+    }
+    public int getDiasParaVencer() {
+        return diasParaVencer;
     }
 
+    public void setDiasParaVencer(int diasParaVencer) {
+        this.diasParaVencer = diasParaVencer;
+    }
 }
